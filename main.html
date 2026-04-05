@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASPECT-2026 International Conference on Advanced Studies in Physical Engineering. Join leading researchers and engineers in Tashkent, Uzbekistan for groundbreaking discussions and innovations.">
+    <meta name="keywords" content="ASPECT-2026, International Conference, Physical Engineering, Research, Innovation, Tashkent, Uzbekistan, Scopus Indexed">
+    <meta name="author" content="ASPECT Conference Committee">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563EB">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aspect-2026.uz/">
+    <meta property="og:title" content="ASPECT-2026 | International Conference on Advanced Studies in Physical Engineering">
+    <meta property="og:description" content="Join the premier international conference on physical engineering in Tashkent, Uzbekistan. Network with global experts and present your research.">
+    <meta property="og:image" content="https://aspect-2026.uz/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aspect-2026.uz/">
+    <meta property="twitter:title" content="ASPECT-2026 | International Conference">
+    <meta property="twitter:description" content="International Conference on Advanced Studies in Physical Engineering">
+    <meta property="twitter:image" content="https://aspect-2026.uz/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <title>ASPECT-2026 | International Conference on Advanced Studies in Physical Engineering</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <style>
+        /* Critical CSS - Above the fold */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --shadow-light: 0 8px 32px rgba(31, 38, 135, 0.37);
+            --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-feature-settings: 'kern' 1, 'liga' 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeOut 1s ease-in-out 2s forwards;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all var(--transition-normal);
+            transform: translateY(0);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        .navbar .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width var(--transition-normal);
+        }
+
+        .navbar .nav-links a:hover::after,
+        .navbar .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="hero-pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23hero-pattern)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            animation: fadeInScale 1.2s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero .date-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: bounceIn 1s ease-out 0.8s both;
+            font-weight: 500;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all var(--transition-normal);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        /* Sections */
+        .section {
+            padding: 120px 0;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card .icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .card p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-left: 60px;
+            padding: 2rem 0;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 4px solid #667eea;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            color: #718096;
+        }
+
+        /* Registration Plans */
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .plan {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+        }
+
+        .plan.popular {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .plan.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .plan .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .plan .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #718096;
+        }
+
+        .plan ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .plan li {
+            padding: 0.5rem 0;
+            color: #718096;
+        }
+
+        .plan li::before {
+            content: '✓';
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        footer .grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        footer h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        footer p {
+            color: #a0aec0;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        footer a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all var(--transition-fast);
+        }
+
+        footer .social-links a:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 2rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section h2 {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 2rem;
+            }
+
+            .card .icon {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                margin-left: 40px;
+                padding-left: 1rem;
+                margin-right: 0;
+                padding-right: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            .plan.popular {
+                transform: none;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus states */
+        .btn:focus,
+        a:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar,
+            footer .social-links {
+                display: none !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<body class="bg-background font-body text-on-surface selection:bg-primary/10 selection:text-primary">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+<div class="text-xl font-bold tracking-tighter text-on-surface">
+            ASPECT<span class="text-primary">2026</span>
+</div>
+<div class="hidden md:flex items-center gap-10 text-[13px] font-medium tracking-wide uppercase text-on-surface-variant">
+<a class="relative nav-link transition-colors hover:text-on-surface" href="#about">About</a>
+<a class="relative nav-link transition-colors hover:text-on-surface" href="#tracks">Tracks</a>
+<a class="relative nav-link transition-colors hover:text-on-surface" href="#dates">Dates</a>
+<a class="relative nav-link transition-colors hover:text-on-surface" href="#committee">Committee</a>
+<a class="relative nav-link transition-colors hover:text-on-surface" href="#submission">Submission</a>
+<a class="relative nav-link transition-colors hover:text-on-surface" href="#venue">Venue</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden lg:block text-[13px] font-semibold text-on-surface hover:text-primary transition-colors">Submit Paper</button>
+<button class="bg-secondary text-white px-5 py-2.5 rounded text-[13px] font-semibold tracking-wide uppercase transition-all hover:bg-on-surface active:scale-95">Register</button>
+</div>
+</div>
+</nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[90vh] flex items-center pt-20">
+    <div class="absolute inset-0 z-0">
+    <img alt="Research Center" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDucqxDRLSC2beBLSu-FIknizumWD20dSdoyKdmh2cJtr_US7cGyrQ0rGDPzyBA6idsLoam1ySVmdHwJpJbzu6iOFwQ4UG6Jh-59eeMG4RAvJ1Y-bVHEEgkFICFTpFD9GWbAPJ128GeapKVTrK_MvTWrBb5N9sbMyeojj67h3juOjnSLStul0VvH5RZpSJZxZnlTaq2xNb_3eb9i9uuDZJpF--02PuFaLbufcx_ZeqiXZYP8tz_MqXkhT9vX7FbpsWvwCRdCz3Gje4"/>
+    <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
+    <div class="grid grid-cols-12 gap-6">
+    <div class="col-span-12 lg:col-span-9">
+    <div class="mb-10 inline-flex items-center gap-4 text-[11px] font-bold tracking-[0.2em] uppercase text-on-surface-variant/70">
+    <span class="w-8 h-[1px] bg-primary"></span>
+                    April 15–17, 2026 <span class="mx-1 text-outline-variant">|</span> Tashkent, Uzbekistan
+                </div>
+    <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] mb-10 text-on-surface max-w-5xl">
+                    Advanced Studies in <span class="text-primary">Physical Engineering</span> & Chemical Technologies
+                </h1>
+    <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 font-light">
+                    The premier international summit bridging fundamental physics and sustainable industrial innovation.
+                </p>
+    <div class="flex flex-wrap gap-4">
+    <a class="bg-primary text-white px-8 py-4 rounded font-semibold text-sm transition-all hover:bg-blue-700 hover:shadow-ambient-lg" href="#registration">Register Attendance</a>
+    <a class="bg-white border border-outline px-8 py-4 rounded font-semibold text-sm text-on-surface transition-all hover:border-on-surface" href="#submission">Call for Papers</a>
+    </div>
+    <div class="mt-20 flex items-center gap-10">
+    <span class="text-[10px] uppercase tracking-[0.25em] font-bold text-on-surface-variant/50">Indexed By</span>
+    <div class="flex gap-8 items-center opacity-40 text-xs font-bold tracking-widest uppercase">
+    <span>Scopus</span>
+    <span>Web of Science</span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-32 bg-background border-y border-outline/50" id="about">
+    <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-12 gap-12 items-center">
+    <div class="col-span-12 lg:col-span-6 relative">
+    <div class="aspect-[16/10] bg-slate-100 rounded-lg overflow-hidden border border-outline/30">
+    <img alt="Microscopic analysis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPF1RHEoSGLgAH6r5L6JhSsQ3xQp-XsiR5WqL9LvVe_MDbhq8VG2FoRFjZYgsnRmAwGp16fSgUfE3JvVQ5Piswjx1iqUUs6B2F07e2XPqfqahiqZQwH6sBl1n0eLQEp9crmQ2Ydx28yiaMXjo0c98SJ_AmBR0JqrWl_PTl-CZveESAQ738bDzBlYx6xiZSM6Xp4re9gqbkQ0xcCmoyCaUGxpUKYwg-yA1Tf6I5Wzg_tvXpiD4mIxdF8eTUOFDL75EG7nShHOa1Kjg"/>
+    </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 lg:pl-12">
+    <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-primary mb-6 block">Vision &amp; Impact</span>
+    <h2 class="text-4xl font-bold leading-tight mb-8 text-on-surface">Pioneering the Next Era of Industrial Science</h2>
+    <div class="space-y-6 text-on-surface-variant text-lg font-light leading-relaxed">
+    <p>ASPECT 2026 serves as a premier international platform for researchers to exchange findings in the convergence of physical sciences and chemical engineering.</p>
+    <p>This year, we emphasize the transformative power of Automation in optimizing chemical processes and materials synthesis, shaping a more sustainable future.</p>
+    </div>
+    <div class="mt-16 grid grid-cols-3 gap-8 pt-12 border-t border-outline">
+    <div>
+    <span class="text-3xl font-bold text-on-surface block mb-1 tracking-tighter">500+</span>
+    <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Delegates</span>
+    </div>
+    <div>
+    <span class="text-3xl font-bold text-on-surface block mb-1 tracking-tighter">40+</span>
+    <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Countries</span>
+    </div>
+    <div>
+    <span class="text-3xl font-bold text-on-surface block mb-1 tracking-tighter">12</span>
+    <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Keynotes</span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Tracks Section -->
+    <section class="py-32 bg-surface" id="tracks">
+    <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-12 gap-6 mb-20 items-end">
+    <div class="col-span-12 lg:col-span-8">
+    <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-primary mb-4 block">Scientific Tracks</span>
+    <h2 class="text-4xl font-bold leading-tight text-on-surface">Conference Domains</h2>
+    </div>
+    <div class="col-span-12 lg:col-span-4 lg:text-right">
+    <a class="text-sm font-semibold text-primary inline-flex items-center gap-2 group" href="#">
+                    Full Catalog 
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+    </a>
+    </div>
+    </div>
+    <div class="grid grid-cols-12 gap-6">
+    <div class="col-span-12 lg:col-span-7 bg-background p-10 border border-outline hover:border-primary/30 transition-all shadow-ambient hover:shadow-ambient-lg group">
+    <div class="flex flex-col h-full justify-between">
+    <div>
+    <div class="mb-8 text-primary">
+    <span class="material-symbols-outlined text-3xl">waves</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-4">Applied Physics and Thermofluid Engineering</h3>
+    <p class="text-on-surface-variant font-light text-lg max-w-md">Focusing on computational fluid dynamics and quantum engineering for the energy sector.</p>
+    </div>
+    </div>
+    </div>
+    <div class="col-span-12 lg:col-span-5 bg-on-surface p-10 border border-transparent shadow-ambient hover:shadow-ambient-xl transition-all">
+    <div class="text-white/40 mb-8">
+    <span class="material-symbols-outlined text-3xl">layers</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-4 text-white">Advanced Materials &amp; Nanotech</h3>
+    <p class="text-white/60 font-light leading-relaxed">Surface engineering and thin-film technology for next-gen energy harvesting systems.</p>
+    </div>
+    <div class="col-span-12 lg:col-span-5 bg-background p-10 border border-outline hover:border-primary/30 transition-all shadow-ambient hover:shadow-ambient-lg">
+    <div class="text-primary/50 mb-8">
+    <span class="material-symbols-outlined text-3xl">eco</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-4">Sustainable Chemical Engineering</h3>
+    <p class="text-on-surface-variant font-light leading-relaxed">Green chemistry and innovative carbon capture for industrial decarbonization.</p>
+    </div>
+    <div class="col-span-12 lg:col-span-7 bg-primary p-10 border border-transparent shadow-ambient hover:shadow-ambient-xl transition-all">
+    <div class="text-white/50 mb-8">
+    <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-4 text-white">Smart Manufacturing &amp; Industrial AI</h3>
+    <p class="text-white/80 font-light leading-relaxed">Mechatronics and AI models in autonomous chemical production and quality control.</p>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="py-32 bg-background" id="dates">
+    <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-24">
+    <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-primary mb-4 block">Schedule</span>
+    <h2 class="text-4xl font-bold text-on-surface">Key Milestones</h2>
+    </div>
+    <div class="max-w-4xl mx-auto space-y-px bg-outline">
+    <!-- Date Row 1 -->
+    <div class="grid grid-cols-12 bg-background p-8 items-center group hover:bg-slate-50 transition-colors">
+    <div class="col-span-12 md:col-span-3 text-[11px] font-bold tracking-[0.1em] uppercase text-primary mb-2 md:mb-0">
+                    Feb 15, 2026
+                </div>
+    <div class="col-span-12 md:col-span-6">
+    <h4 class="text-lg font-bold mb-1">Paper Submission Deadline</h4>
+    <p class="text-sm text-on-surface-variant font-light">Early submissions prioritized for peer review cycles.</p>
+    </div>
+    <div class="col-span-12 md:col-span-3 text-right mt-4 md:mt-0">
+    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+    </div>
+    </div>
+    <!-- Date Row 2 -->
+    <div class="grid grid-cols-12 bg-background p-8 items-center group hover:bg-slate-50 transition-colors border-t border-outline/50">
+    <div class="col-span-12 md:col-span-3 text-[11px] font-bold tracking-[0.1em] uppercase text-primary mb-2 md:mb-0">
+                    Apr 10, 2026
+                </div>
+    <div class="col-span-12 md:col-span-6">
+    <h4 class="text-lg font-bold mb-1">Acceptance Notification</h4>
+    <p class="text-sm text-on-surface-variant font-light">Official results distributed via the submission portal.</p>
+    </div>
+    <div class="col-span-12 md:col-span-3 text-right mt-4 md:mt-0">
+    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+    </div>
+    </div>
+    <!-- Date Row 3 -->
+    <div class="grid grid-cols-12 bg-background p-8 items-center group hover:bg-slate-50 transition-colors border-t border-outline/50">
+    <div class="col-span-12 md:col-span-3 text-[11px] font-bold tracking-[0.1em] uppercase text-primary mb-2 md:mb-0">
+                    Apr 15, 2026
+                </div>
+    <div class="col-span-12 md:col-span-6">
+    <h4 class="text-lg font-bold mb-1">Conference Opening</h4>
+    <p class="text-sm text-on-surface-variant font-light">Inaugural sessions at Tashkent State Technical University.</p>
+    </div>
+    <div class="col-span-12 md:col-span-3 text-right mt-4 md:mt-0">
+    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Committee Section -->
+    <section class="py-32 bg-surface" id="committee">
+    <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-20 text-center">
+    <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-primary mb-4 block">Organization</span>
+    <h2 class="text-4xl font-bold">Scientific Committee</h2>
+    </div>
+    <div class="grid grid-cols-12 gap-8">
+    <div class="col-span-12 md:col-span-4 bg-background p-10 border border-outline hover:border-primary transition-all group">
+    <div class="w-24 h-24 mb-10 overflow-hidden rounded border border-outline/50">
+    <img alt="James Anderson" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCixGXhTCEKaNVzSNz-ARhfhZJoDhXeyS9AQI8FTM2bKQasoUCVg36gEoL3p07Yc1s6gxPXwDqqA2odAqinm86Tfz0jQwne3U_i2AwVr6dhq2rL75Yg0A8o_PLXPrvYKfkRk0OmiLpaFIOoJuhe8NsKpg3aoJp3LT0PbSafQebrPiJX69QKOmDEUEiULeWIRa4W8-34a-8pBDNV5tmy853VbQKCpfOrj9ds8z7R41wlepNu3Jy9ReJACUN9OmcLymHsJABP96aItoU"/>
+    </div>
+    <h4 class="text-xl font-bold mb-2">Prof. James Anderson</h4>
+    <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6">General Chair</p>
+    <p class="text-sm text-on-surface-variant font-light">Massachusetts Institute of Technology, USA</p>
+    </div>
+    <div class="col-span-12 md:col-span-4 bg-background p-10 border border-outline hover:border-primary transition-all group">
+    <div class="w-24 h-24 mb-10 overflow-hidden rounded border border-outline/50">
+    <img alt="Elena Popova" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR_CtyKnkIq0L3NXuTqgDH-jxZr4ULFSCxqLt5JGnEzz9zkTzlIeqQaw8qXKiNgzwLhbdKh4camDPxruNfHtFrUbykXdjPcqTSOOz7E_suFfAdBoUSxnndyZ5acOm4_BD5jwe3wShbsGyEcK_xghSnL2ZKCfTNrhXwq2-8OHnrVmzAs31aRZ8TzkGTXXwY3WLwVuBjyb69uGv9hQmIsWMsnnCRm_LiPtGS_zttDSn0ob9wSYr0tc7Wxqz3xgTz9RcpJ8InONSyxTQ"/>
+    </div>
+    <h4 class="text-xl font-bold mb-2">Dr. Elena Popova</h4>
+    <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6">Technical Chair</p>
+    <p class="text-sm text-on-surface-variant font-light">ETH Zürich, Switzerland</p>
+    </div>
+    <div class="col-span-12 md:col-span-4 bg-background p-10 border border-outline hover:border-primary transition-all group">
+    <div class="w-24 h-24 mb-10 overflow-hidden rounded border border-outline/50">
+    <img alt="Mirzod Davlatov" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQhIuRWtJ4AFbwL6LicaDHYHYaT67M6qvMnRux-6GL4U9TzleAZ4ulEHusd4ZoC_ONOT78zV7MdJsjSMMiy2jBY96BtjT8ImqTn3EBAUUXkudsyYv-IutAVGYK79YcreGyMvCUdi1Mnlt8v3-MF4yn-MoPgnYrfUl_vqGqqm43KJbXXkRbLCSwbZTcBRrWTCKRFpuxcMn6kpjYK7G5IJdp1EFENMnjajNOJOarE0bVKmhLai-3FUlben2YtOsEkgGCZG5UR1GcKW0"/>
+    </div>
+    <h4 class="text-xl font-bold mb-2">Prof. Mirzod Davlatov</h4>
+    <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6">Organizing Chair</p>
+    <p class="text-sm text-on-surface-variant font-light">Tashkent State Technical University</p>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Submission Section -->
+    <section class="section" id="submission">
+        <div class="container">
+            <div class="section-header">
+                <h2>Submission Guidelines</h2>
+                <p>How to submit your research for ASPECT-2026</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <i class="fas fa-file-alt icon"></i>
+                    <h3>Abstract Submission</h3>
+                    <p>Submit a 250-500 word abstract outlining your research objectives, methodology, and expected outcomes. All abstracts will undergo peer review.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-check-circle icon"></i>
+                    <h3>Review Process</h3>
+                    <p>Each submission will be reviewed by at least two experts in the field. Acceptance notifications will be sent within 4 weeks of submission.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-book icon"></i>
+                    <h3>Publication</h3>
+                    <p>Accepted papers will be published in the conference proceedings and submitted to Scopus-indexed journals for consideration.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-trophy icon"></i>
+                    <h3>Awards</h3>
+                    <p>Outstanding papers will be recognized with awards in various categories including Best Paper, Best Student Paper, and Innovation Award.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="section" id="venue">
+        <div class="container">
+            <div class="section-header">
+                <h2>Venue & Accommodation</h2>
+                <p>Discover Tashkent and our conference venue</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <i class="fas fa-building icon"></i>
+                    <h3>Conference Venue</h3>
+                    <p><strong>Tashkent International Conference Center</strong><br>
+                    Located in the heart of Tashkent, our venue offers state-of-the-art facilities including multiple auditoriums, exhibition spaces, and modern AV equipment.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hotel icon"></i>
+                    <h3>Accommodation</h3>
+                    <p>Enjoy comfortable stays at partner hotels with special conference rates. Options range from budget-friendly to luxury accommodations, all within easy reach of the venue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="section" id="registration">
+        <div class="container">
+            <div class="section-header">
+                <h2>Registration</h2>
+                <p>Choose the registration plan that best fits your needs</p>
+            </div>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Student</h3>
+                    <div class="price">$150<span>/person</span></div>
+                    <ul>
+                        <li>Conference attendance</li>
+                        <li>Access to all sessions</li>
+                        <li>Conference materials</li>
+                        <li>Networking events</li>
+                        <li>Lunch and refreshments</li>
+                    </ul>
+                    <a href="#" class="btn">Register Now</a>
+                </div>
+                <div class="plan popular">
+                    <h3>Academic</h3>
+                    <div class="price">$300<span>/person</span></div>
+                    <ul>
+                        <li>Everything in Student</li>
+                        <li>Abstract submission</li>
+                        <li>Publication opportunity</li>
+                        <li>Certificate of presentation</li>
+                        <li>Conference proceedings</li>
+                    </ul>
+                    <a href="#" class="btn">Register Now</a>
+                </div>
+                <div class="plan">
+                    <h3>Industry</h3>
+                    <div class="price">$500<span>/person</span></div>
+                    <ul>
+                        <li>Everything in Academic</li>
+                        <li>Exhibition space</li>
+                        <li>Priority networking</li>
+                        <li>Sponsorship opportunities</li>
+                        <li>VIP reception access</li>
+                    </ul>
+                    <a href="#" class="btn">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="grid">
+                <div>
+                    <h4>ASPECT-2026</h4>
+                    <p>International Conference on Advanced Studies in Physical Engineering</p>
+                    <p>Bringing together researchers, engineers, and innovators from around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#topics">Topics</a></p>
+                    <p><a href="#dates">Important Dates</a></p>
+                    <p><a href="#registration">Registration</a></p>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@aspect-2026.uz</p>
+                    <p><i class="fas fa-phone"></i> +998 71 123 45 67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tashkent, Uzbekistan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ASPECT International Conference. All rights reserved. Indexed by Scopus.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('nav');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Hide/show navbar on scroll
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(60px)';
+                section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(section);
+            });
+        });
+    </script>
+
+    <!-- Schema.org structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "ASPECT-2026 International Conference",
+        "description": "International Conference on Advanced Studies in Physical Engineering",
+        "startDate": "2026-04-15",
+        "endDate": "2026-04-17",
+        "location": {
+            "@type": "Place",
+            "name": "Tashkent International Conference Center",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Tashkent",
+                "addressCountry": "UZ"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "ASPECT Conference Committee",
+            "url": "https://aspect-2026.uz"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+</body>
+</html>

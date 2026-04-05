@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ASPECT-2026 | International Conference on Advanced Studies in Physical Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <script>tailwind.config = { theme: { extend: { colors: { navy: '#0d1b2a', cobalt: '#1a56db', gold: '#c9a84c', cream: '#f8f5ef', muted: '#6b7a8d' }, fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['DM Sans', 'sans-serif'] } } } }</script>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif
+        }
+
+        nav {
+            transition: background .35s, box-shadow .35s
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 #e2ddd6, 0 4px 24px rgba(0, 0, 0, .06)
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity .7s, transform .7s
+        }
+
+        .reveal.on {
+            opacity: 1;
+            transform: none
+        }
+
+        .track:hover {
+            background: #0d1b2a
+        }
+
+        .track:hover h3,
+        .track:hover li {
+            color: rgba(255, 255, 255, .85)
+        }
+
+        .track:hover .tn {
+            color: rgba(255, 255, 255, .07)
+        }
+
+        .sub:hover {
+            background: #0d1b2a
+        }
+
+        .sub:hover h3,
+        .sub:hover p {
+            color: rgba(255, 255, 255, .75)
+        }
+
+        .sub:hover .ico {
+            background: #c9a84c
+        }
+
+        .text-yellow-300 {
+            color: #e2c17a !important
+        }
+
+        @keyframes up {
+            from {
+                opacity: 0;
+                transform: translateY(28px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .a1 {
+            animation: up .8s both
+        }
+
+        .a2 {
+            animation: up .8s .15s both
+        }
+
+        .a3 {
+            animation: up .8s .3s both
+        }
+
+        .a4 {
+            animation: up .8s .45s both
+        }
+
+        .a5 {
+            animation: up .8s .6s both
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-navy overflow-x-hidden">
+
+    <!-- NAV -->
+    <nav id="nav" class="fixed top-0 inset-x-0 z-50 h-[72px] flex items-center">
+        <div class="max-w-[1920px] mx-auto w-full px-8 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold text-white nav-logo">ASPECT<span
+                    class="text-yellow-300 nav-span">2026</span></a>
+            <ul class="hidden md:flex gap-8 text-[11px] font-semibold tracking-[.15em] uppercase">
+                <li><a href="#about" class="nav-link text-white/70 hover:text-white transition-colors">About</a></li>
+                <li><a href="#tracks" class="nav-link text-white/70 hover:text-white transition-colors">Tracks</a></li>
+                <li><a href="#dates" class="nav-link text-white/70 hover:text-white transition-colors">Dates</a></li>
+                <li><a href="#committee" class="nav-link text-white/70 hover:text-white transition-colors">Committee</a>
+                </li>
+                <li><a href="#submission"
+                        class="nav-link text-white/70 hover:text-white transition-colors">Submission</a></li>
+                <li><a href="#venue" class="nav-link text-white/70 hover:text-white transition-colors">Venue</a></li>
+            </ul>
+            <a href="#registration"
+                class="bg-gold text-navy text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-sm hover:bg-yellow-400 transition-colors nav-cta">Register</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="min-h-screen flex items-center relative overflow-hidden"
+        style="background:linear-gradient(135deg,#0d1b2a 0%,#1a2d4a 45%,#08151f 100%)">
+        <div class="absolute inset-0"
+            style="background:radial-gradient(ellipse 60% 60% at 70% 40%,rgba(26,86,219,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(201,168,76,.12) 0%,transparent 60%);background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.025) 79px,rgba(255,255,255,.025) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.025) 79px,rgba(255,255,255,.025) 80px)">
+        </div>
+        <div class="relative z-10 max-w-[1920px] mx-auto px-8 py-32 w-full">
+            <div class="flex items-center gap-3 mb-8 a1">
+                <div class="w-10 h-px bg-gold/70"></div><span
+                    class="text-[11px] font-bold tracking-[.2em] uppercase text-yellow-300/80">June 10–11, 2026 ·
+                    Tashkent, Uzbekistan</span>
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold leading-[1.08] text-white max-w-4xl mb-7 a2">Advanced
+                Studies in <em class="text-yellow-300 italic">Physical Engineering</em> & Chemical Technologies</h1>
+            <p class="text-white/55 text-lg md:text-xl font-light max-w-xl mb-12 a3">The premier international forum
+                bridging fundamental physics, chemical engineering, and sustainable industrial innovation — hosted by
+                Tashkent State Technical University.</p>
+            <div class="flex flex-wrap gap-3 mb-20 a4">
+                <a href="#registration"
+                    class="bg-cobalt text-white text-sm font-semibold tracking-wide uppercase px-8 py-3.5 rounded-sm hover:bg-blue-500 transition-colors">Register
+                    Now</a>
+                <a href="#submission"
+                    class="border border-white/25 text-white/80 text-sm font-medium tracking-wide uppercase px-8 py-3.5 rounded-sm hover:border-white/60 hover:text-white transition-colors">Call
+                    for Papers</a>
+            </div>
+            <div class="flex flex-wrap gap-0 border-t border-white/10 a5">
+                <div class="pr-12 mr-12 border-r border-white/10 pt-7">
+                    <div class="font-serif text-4xl font-bold text-white">500+</div>
+                    <div class="text-[10px] font-bold tracking-[.18em] uppercase text-white/35 mt-1">Delegates</div>
+                </div>
+                <div class="pr-12 mr-12 border-r border-white/10 pt-7">
+                    <div class="font-serif text-4xl font-bold text-white">40+</div>
+                    <div class="text-[10px] font-bold tracking-[.18em] uppercase text-white/35 mt-1">Countries</div>
+                </div>
+                <div class="pr-12 mr-12 border-r border-white/10 pt-7">
+                    <div class="font-serif text-4xl font-bold text-white">4</div>
+                    <div class="text-[10px] font-bold tracking-[.18em] uppercase text-white/35 mt-1">Tracks</div>
+                </div>
+                <div class="pt-7">
+                    <div class="font-serif text-4xl font-bold text-white">2</div>
+                    <div class="text-[10px] font-bold tracking-[.18em] uppercase text-white/35 mt-1">Days</div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 flex items-center gap-4 z-10">
+            <span class="text-[10px] font-bold tracking-[.2em] uppercase text-white/25">Indexed by</span>
+            <span
+                class="text-[10px] font-bold tracking-widest text-white/40 border border-white/12 px-3 py-1">Scopus</span>
+            <span class="text-[10px] font-bold tracking-widest text-white/40 border border-white/12 px-3 py-1">Web of
+                Science</span>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-32 bg-white border-b border-gray-100">
+        <div class="max-w-[1920px] mx-auto px-8 grid md:grid-cols-2 gap-20 items-start">
+            <div class="reveal relative">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDucqxDRLSC2beBLSu-FIknizumWD20dSdoyKdmh2cJtr_US7cGyrQ0rGDPzyBA6idsLoam1ySVmdHwJpJbzu6iOFwQ4UG6Jh-59eeMG4RAvJ1Y-bVHEEgkFICFTpFD9GWbAPJ128GeapKVTrK_MvTWrBb5N9sbMyeojj67h3juOjnSLStul0VvH5RZpSJZxZnlTaq2xNb_3eb9i9uuDZJpF--02PuFaLbufcx_ZeqiXZYP8tz_MqXkhT9vX7FbpsWvwCRdCz3Gje4"
+                    class="w-full aspect-[4/3] object-cover rounded-sm" alt="Venue" />
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPF1RHEoSGLgAH6r5L6JhSsQ3xQp-XsiR5WqL9LvVe_MDbhq8VG2FoRFjZYgsnRmAwGp16fSgUfE3JvVQ5Piswjx1iqUUs6B2F07e2XPqfqahiqZQwH6sBl1n0eLQEp9crmQ2Ydx28yiaMXjo0c98SJ_AmBR0JqrWl_PTl-CZveESAQ738bDzBlYx6xiZSM6Xp4re9gqbkQ0xcCmoyCaUGxpUKYwg-yA1Tf6I5Wzg_tvXpiD4mIxdF8eTUOFDL75EG7nShHOa1Kjg"
+                    class="absolute -bottom-6 -right-6 w-2/5 aspect-square object-cover rounded-sm border-4 border-white shadow-xl hidden md:block"
+                    alt="Lab" />
+            </div>
+            <div class="reveal">
+                <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-4 block">Vision &
+                    Mission</span>
+                <h2 class="font-serif text-4xl font-bold leading-tight mb-6">Pioneering the Next Era of Industrial
+                    Science</h2>
+                <p class="text-muted leading-relaxed mb-4"><strong class="text-navy">ASPECT-2026</strong> will be held
+                    by <strong class="text-navy">Tashkent State Technical University</strong> on June 10–11, 2026 —
+                    providing a premier international platform for researchers to exchange the latest findings in
+                    physical engineering and chemical technology.</p>
+                <p class="text-muted leading-relaxed mb-4">The conference supports interdisciplinary research in
+                    biophysics, AI, automation, and robotics. All accepted papers will be indexed in the <strong
+                        class="text-navy">Scopus</strong> database.</p>
+                <div class="mt-8 pt-8 border-t border-gray-100">
+                    <div class="text-[10px] font-bold tracking-[.18em] uppercase text-muted mb-3">Supporting
+                        Institutions</div>
+                    <p class="text-sm text-muted leading-loose">Academy of Sciences of Uzbekistan · Fergana State
+                        University · Namangan State University · Samarkand State University · Karshi State University ·
+                        Belarusian National Technical University · Belarusian State University · EGE University
+                        (Turkiye) · University of Malaya · International Islamic University of Malaya · Novosibirsk
+                        State University · Osh University of Technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRACKS -->
+    <section id="tracks" class="py-32 bg-cream">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="reveal mb-14">
+                <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-3 block">Scientific
+                    Program</span>
+                <h2 class="font-serif text-4xl font-bold">Conference Tracks</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-px bg-gray-200 border border-gray-200 reveal">
+                <div class="track bg-white p-12 transition-colors duration-300 cursor-default">
+                    <div class="tn font-serif text-5xl font-bold text-gray-100 mb-5 transition-colors duration-300">01
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-5 transition-colors duration-300">Applied Physics and
+                        Thermofluid Engineering</h3>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Engineering Applications of
+                            Electromagnetic and Thermal Fields</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Heat and Mass Transfer in Energy and
+                            Process Systems</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Vibrations and Acoustics in
+                            Mechanical Structures</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Physics-Based Modeling of Industrial
+                            Systems</li>
+                    </ul>
+                </div>
+                <div class="track bg-white p-12 transition-colors duration-300 cursor-default">
+                    <div class="tn font-serif text-5xl font-bold text-gray-100 mb-5 transition-colors duration-300">02
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-5 transition-colors duration-300">Advanced Materials
+                        and Surface Engineering</h3>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Thermophysical Properties of
+                            Functional and Composite Materials</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Tribology and Surface Modification
+                            for Wear Resistance</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Smart and Nanostructured Materials
+                            in Engineering Applications</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Mechanical Behavior and
+                            Characterization of Technical Textiles</li>
+                    </ul>
+                </div>
+                <div class="track bg-white p-12 transition-colors duration-300 cursor-default">
+                    <div class="tn font-serif text-5xl font-bold text-gray-100 mb-5 transition-colors duration-300">03
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-5 transition-colors duration-300">Chemical and
+                        Process Engineering for Sustainability</h3>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Process Intensification and Green
+                            Chemical Technologies</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Surface Chemistry and Functional
+                            Coatings</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Waste Valorization and Circular
+                            Material Flows</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Physical-Chemical Analysis of
+                            Industrial Processes</li>
+                    </ul>
+                </div>
+                <div class="track bg-white p-12 transition-colors duration-300 cursor-default">
+                    <div class="tn font-serif text-5xl font-bold text-gray-100 mb-5 transition-colors duration-300">04
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-5 transition-colors duration-300">Automation,
+                        Mechatronics, and Smart Manufacturing</h3>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Intelligent Control Systems in
+                            Manufacturing Equipment</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Mechatronics and Robotics for
+                            Material Handling</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Sensor-Based Monitoring and Image
+                            Analysis in Production</li>
+                        <li class="flex gap-2 transition-colors duration-300"><span
+                                class="text-cobalt text-xs mt-0.5 shrink-0">—</span>Digital Twins and Smart Process
+                            Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATES -->
+    <section id="dates" class="py-32" style="background:#0d1b2a">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="reveal mb-16">
+                <span
+                    class="text-[11px] font-bold tracking-[.2em] uppercase text-yellow-300/70 mb-3 block">Schedule</span>
+                <h2 class="font-serif text-4xl font-bold text-white">Key Milestones</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-px bg-white/8 reveal">
+                <div class="p-10 border-t-2 border-transparent hover:border-gold transition-colors"
+                    style="background:rgba(255,255,255,.03)">
+                    <div class="font-serif text-2xl font-bold text-yellow-300 mb-3">Feb 15, 2026</div>
+                    <div class="font-semibold text-white mb-2">Paper Submission Deadline</div>
+                    <div class="text-sm text-white/40 leading-relaxed">Early submissions prioritized for peer review
+                        cycles.</div>
+                    <span
+                        class="inline-block mt-4 text-[10px] font-bold tracking-widest uppercase text-blue-400 border border-blue-400/30 px-2 py-1">Closed</span>
+                </div>
+                <div class="p-10 border-t-2 border-transparent hover:border-gold transition-colors"
+                    style="background:rgba(255,255,255,.03)">
+                    <div class="font-serif text-2xl font-bold text-yellow-300 mb-3">Apr 10, 2026</div>
+                    <div class="font-semibold text-white mb-2">Acceptance Notification</div>
+                    <div class="text-sm text-white/40 leading-relaxed">Official results distributed via the submission
+                        portal.</div>
+                    <span
+                        class="inline-block mt-4 text-[10px] font-bold tracking-widest uppercase text-blue-400 border border-blue-400/30 px-2 py-1">Upcoming</span>
+                </div>
+                <div class="p-10 border-t-2 border-transparent hover:border-gold transition-colors"
+                    style="background:rgba(255,255,255,.03)">
+                    <div class="font-serif text-2xl font-bold text-yellow-300 mb-3">Jun 10–11, 2026</div>
+                    <div class="font-semibold text-white mb-2">Conference Days</div>
+                    <div class="text-sm text-white/40 leading-relaxed">Full 2-day program with keynotes and
+                        presentations at TDTU.</div>
+                    <span
+                        class="inline-block mt-4 text-[10px] font-bold tracking-widest uppercase text-blue-400 border border-blue-400/30 px-2 py-1">Main
+                        Event</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMITTEE -->
+    <section id="committee" class="py-32 bg-white">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="reveal mb-12">
+                <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-3 block">Leadership</span>
+                <h2 class="font-serif text-4xl font-bold">Scientific & Technical Committee</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 border border-gray-100 reveal"
+                style="gap:1px;background:#e5e7eb">
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Bakhodir Aliyev</div>
+                    <div class="text-xs text-muted">Almaty Technological University</div>
+                    <div class="text-xs text-cobalt mt-1">aliyevb72@mail.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Sashina Elena Sergeevna</div>
+                    <div class="text-xs text-muted">St. Petersburg State University</div>
+                    <div class="text-xs text-cobalt mt-1">e.sashina@mail.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Andreeva Elena Georgievna</div>
+                    <div class="text-xs text-muted">Russian State University (A.N. Kosygina)</div>
+                    <div class="text-xs text-cobalt mt-1">dr.e.andreeva@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Cherunova Irina Viktorovna</div>
+                    <div class="text-xs text-muted">Don State Technical University</div>
+                    <div class="text-xs text-cobalt mt-1">i_sch@mail.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Tyurin Igor Nikolaevich</div>
+                    <div class="text-xs text-muted">Russian State University (A.N. Kosygin)</div>
+                    <div class="text-xs text-cobalt mt-1">tyurin-in@rguk.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Raushan Zhilisbaeva</div>
+                    <div class="text-xs text-muted">Almaty Technological University</div>
+                    <div class="text-xs text-cobalt mt-1">rau_45@mail.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Jobir Adashev</div>
+                    <div class="text-xs text-muted">Romanovsky Institute of Mathematics, Uzbekistan</div>
+                    <div class="text-xs text-cobalt mt-1">adashevjq@mail.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Lunina Ekaterina</div>
+                    <div class="text-xs text-muted">Russian State University (A.N. Kosygin)</div>
+                    <div class="text-xs text-cobalt mt-1">lunina-ev@rguk.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Prof. Yasinskaya Natalya</div>
+                    <div class="text-xs text-muted">Vitebsk State Technological University</div>
+                    <div class="text-xs text-cobalt mt-1">yasinskaynn@rambler.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Prof. Kadoğlu Hüseyin</div>
+                    <div class="text-xs text-muted">EGE University, Turkiye</div>
+                    <div class="text-xs text-cobalt mt-1">huseyin.kadoglu@ege.edu.tr</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Prof. Salikh Sh. Tashpulatov</div>
+                    <div class="text-xs text-muted">Tashkent Textile & Light Industry Institute</div>
+                    <div class="text-xs text-cobalt mt-1">ssht61@mail.ru</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Assoc. Prof. Muhammad Omonov</div>
+                    <div class="text-xs text-muted">Bursa Uludag University, Turkiye</div>
+                    <div class="text-xs text-cobalt mt-1">omonov.muhammad001@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Prof. Kamilova Xolida Hafizovna</div>
+                    <div class="text-xs text-muted">Tashkent Institute of Textile Light Industry</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Azimjon Abdullayev</div>
+                    <div class="text-xs text-muted">Zhejiang SCI-TECH University, China</div>
+                    <div class="text-xs text-cobalt mt-1">azim.zhejiangsciandtech@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Prof. Erdem Ramazan</div>
+                    <div class="text-xs text-muted">Akdeniz University, Turkiye</div>
+                    <div class="text-xs text-cobalt mt-1">ramazanerdem@akdeniz.edu.tr</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. Kamola Karimova</div>
+                    <div class="text-xs text-muted">Jizzakh Polytechnic Institute, Uzbekistan</div>
+                    <div class="text-xs text-cobalt mt-1">kamola.karimova1987@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Rustamova Nodira</div>
+                    <div class="text-xs text-muted">Tashkent State Institute, Uzbekistan</div>
+                    <div class="text-xs text-cobalt mt-1">rustamovanodira19@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Assoc. Prof. Slobodan Stefanovic</div>
+                    <div class="text-xs text-muted">Akademija Tehničko-Vaspitačkih Studija NIŠ, Serbia</div>
+                    <div class="text-xs text-cobalt mt-1">slobodanstef@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Dr. K. Abdurasulov</div>
+                    <div class="text-xs text-muted">Inst. of Mathematics UAS & Beira Interior, Portugal</div>
+                    <div class="text-xs text-cobalt mt-1">k.abdurasulov@ubi.pt</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Prof. Djumaniyazov Khadam</div>
+                    <div class="text-xs text-muted">Cotton Industry Scientific Center JSC, Uzbekistan</div>
+                    <div class="text-xs text-cobalt mt-1">kadamzumaniazov48@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Prof. Muradov Rustamjon S.</div>
+                    <div class="text-xs text-muted">Namangan State Technical University</div>
+                    <div class="text-xs text-cobalt mt-1">rustamjonmuradov@gmail.com</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Zavqiddin Ravshanov</div>
+                    <div class="text-xs text-muted">Senior Lecturer, TDTU named after Islam Karimov</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Sezim Mustapayeva</div>
+                    <div class="text-xs text-muted">Yessenov University, Aktau, Kazakhstan</div>
+                    <div class="text-xs text-cobalt mt-1">sezim.mustapayeva@yu.edu.kz</div>
+                </div>
+                <div class="bg-white p-6 hover:bg-cream transition-colors">
+                    <div class="font-semibold text-sm mb-0.5">Aidar Kuttybayev</div>
+                    <div class="text-xs text-muted">Satbayev University, Almaty, Kazakhstan</div>
+                    <div class="text-xs text-cobalt mt-1">a.kuttybayev@satbayev.university</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBMISSION -->
+    <section id="submission" class="py-32 bg-cream">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="reveal mb-14">
+                <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-3 block">Call for
+                    Papers</span>
+                <h2 class="font-serif text-4xl font-bold">Submission Guidelines</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-px bg-gray-200 border border-gray-200 reveal">
+                <div class="sub bg-white p-12 transition-colors duration-300">
+                    <div
+                        class="ico w-12 h-12 bg-cobalt rounded-sm flex items-center justify-center mb-6 transition-colors duration-300">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg></div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 transition-colors duration-300">Abstract Submission
+                    </h3>
+                    <p class="text-sm text-muted leading-relaxed transition-colors duration-300">Submit a 250–500 word
+                        abstract outlining your research objectives, methodology, and expected outcomes. All abstracts
+                        undergo rigorous peer review by domain experts.</p>
+                </div>
+                <div class="sub bg-white p-12 transition-colors duration-300">
+                    <div
+                        class="ico w-12 h-12 bg-cobalt rounded-sm flex items-center justify-center mb-6 transition-colors duration-300">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 transition-colors duration-300">Peer Review Process
+                    </h3>
+                    <p class="text-sm text-muted leading-relaxed transition-colors duration-300">Each submission
+                        reviewed by at least two domain experts. Acceptance notifications within 4 weeks. Double-blind
+                        review ensures fairness and quality.</p>
+                </div>
+                <div class="sub bg-white p-12 transition-colors duration-300">
+                    <div
+                        class="ico w-12 h-12 bg-cobalt rounded-sm flex items-center justify-center mb-6 transition-colors duration-300">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                        </svg></div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 transition-colors duration-300">Scopus Publication
+                    </h3>
+                    <p class="text-sm text-muted leading-relaxed transition-colors duration-300">Accepted papers
+                        published in conference proceedings and submitted to Scopus-indexed journals for consideration.
+                    </p>
+                </div>
+                <div class="sub bg-white p-12 transition-colors duration-300">
+                    <div
+                        class="ico w-12 h-12 bg-cobalt rounded-sm flex items-center justify-center mb-6 transition-colors duration-300">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg></div>
+                    <h3 class="font-serif text-xl font-semibold mb-4 transition-colors duration-300">Awards &
+                        Recognition</h3>
+                    <p class="text-sm text-muted leading-relaxed transition-colors duration-300">Best Paper, Best
+                        Student Paper, and Innovation Award. Winners invited for extended journal submission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENUE -->
+    <section id="venue" class="py-32 bg-white">
+        <div class="max-w-[1920px] mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal"><img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDucqxDRLSC2beBLSu-FIknizumWD20dSdoyKdmh2cJtr_US7cGyrQ0rGDPzyBA6idsLoam1ySVmdHwJpJbzu6iOFwQ4UG6Jh-59eeMG4RAvJ1Y-bVHEEgkFICFTpFD9GWbAPJ128GeapKVTrK_MvTWrBb5N9sbMyeojj67h3juOjnSLStul0VvH5RZpSJZxZnlTaq2xNb_3eb9i9uuDZJpF--02PuFaLbufcx_ZeqiXZYP8tz_MqXkhT9vX7FbpsWvwCRdCz3Gje4"
+                    class="w-full aspect-[4/3] object-cover rounded-sm" alt="TDTU" /></div>
+            <div class="reveal">
+                <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-4 block">Venue &
+                    Location</span>
+                <h2 class="font-serif text-4xl font-bold mb-6">Tashkent, Uzbekistan</h2>
+                <p class="text-muted leading-relaxed mb-8">The conference is hosted at <strong
+                        class="text-navy">Tashkent State Technical University named after Islam Karimov</strong> — one
+                    of the leading technical universities in Central Asia, with state-of-the-art auditoriums and modern
+                    AV equipment.</p>
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-cream rounded-full flex items-center justify-center shrink-0"><svg
+                                class="w-4 h-4 text-cobalt" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg></div>Universitetskaya str. 2, 100095, Tashkent
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-cream rounded-full flex items-center justify-center shrink-0"><svg
+                                class="w-4 h-4 text-cobalt" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg></div>June 10–11, 2026
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-cream rounded-full flex items-center justify-center shrink-0"><svg
+                                class="w-4 h-4 text-cobalt" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
+                            </svg></div>+998 71 123 45 67 · info@aspect-2026.uz
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="registration" class="py-32 bg-cream">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="reveal text-center mb-14">
+                <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-3 block">Registration</span>
+                <h2 class="font-serif text-4xl font-bold">Choose Your Plan</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 reveal">
+                <div class="bg-white p-12">
+                    <div class="text-[10px] font-bold tracking-widest uppercase text-cobalt mb-2">Tier 1</div>
+                    <div class="font-serif text-2xl font-bold mb-6">Student</div>
+                    <div class="font-serif text-5xl font-bold text-cobalt mb-1">$150</div>
+                    <div class="text-xs text-muted mb-8">per person</div>
+                    <ul class="space-y-3 mb-10 text-sm text-muted">
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Conference attendance
+                            (both days)</li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Access to all sessions
+                        </li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Conference materials & bag
+                        </li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Networking events</li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Lunch and refreshments
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="block text-center bg-cobalt text-white text-xs font-bold tracking-widest uppercase py-3.5 rounded-sm hover:bg-blue-500 transition-colors">Register
+                        Now</a>
+                </div>
+                <div class="p-12" style="background:#0d1b2a">
+                    <div class="text-[10px] font-bold tracking-widest uppercase text-yellow-300/70 mb-2">Most Popular
+                    </div>
+                    <div class="font-serif text-2xl font-bold text-white mb-6">Academic</div>
+                    <div class="font-serif text-5xl font-bold text-yellow-300 mb-1">$300</div>
+                    <div class="text-xs text-white/35 mb-8">per person</div>
+                    <ul class="space-y-3 mb-10 text-sm text-white/55">
+                        <li class="flex gap-2"><span class="text-yellow-300 font-bold">✓</span>Everything in Student
+                        </li>
+                        <li class="flex gap-2"><span class="text-yellow-300 font-bold">✓</span>Abstract submission
+                            included</li>
+                        <li class="flex gap-2"><span class="text-yellow-300 font-bold">✓</span>Scopus publication
+                            opportunity</li>
+                        <li class="flex gap-2"><span class="text-yellow-300 font-bold">✓</span>Certificate of
+                            presentation</li>
+                        <li class="flex gap-2"><span class="text-yellow-300 font-bold">✓</span>Conference proceedings
+                            copy</li>
+                    </ul>
+                    <a href="#"
+                        class="block text-center bg-gold text-navy text-xs font-bold tracking-widest uppercase py-3.5 rounded-sm hover:bg-yellow-400 transition-colors">Register
+                        Now</a>
+                </div>
+                <div class="bg-white p-12">
+                    <div class="text-[10px] font-bold tracking-widest uppercase text-cobalt mb-2">Tier 3</div>
+                    <div class="font-serif text-2xl font-bold mb-6">Industry</div>
+                    <div class="font-serif text-5xl font-bold text-cobalt mb-1">$500</div>
+                    <div class="text-xs text-muted mb-8">per person</div>
+                    <ul class="space-y-3 mb-10 text-sm text-muted">
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Everything in Academic
+                        </li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Exhibition space
+                            allocation</li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Priority networking access
+                        </li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Sponsorship opportunities
+                        </li>
+                        <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>VIP reception access</li>
+                    </ul>
+                    <a href="#"
+                        class="block text-center bg-cobalt text-white text-xs font-bold tracking-widest uppercase py-3.5 rounded-sm hover:bg-blue-500 transition-colors">Register
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background:#1b2d42" class="py-20 border-t border-white/5">
+        <div class="max-w-[1920px] mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-14 mb-16">
+                <div class="md:col-span-2">
+                    <div class="font-serif text-2xl font-bold text-white mb-4">ASPECT<span
+                            class="text-yellow-300">2026</span></div>
+                    <p class="text-sm text-white/40 leading-relaxed max-w-sm">International Conference on Advanced
+                        Studies in Physical Engineering and Chemical Technologies. June 10–11, 2026 · Tashkent,
+                        Uzbekistan.</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-bold tracking-[.2em] uppercase text-white/25 mb-5">Navigation</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="#about" class="text-sm text-white/45 hover:text-white transition-colors">About</a>
+                        </li>
+                        <li><a href="#tracks"
+                                class="text-sm text-white/45 hover:text-white transition-colors">Tracks</a></li>
+                        <li><a href="#dates" class="text-sm text-white/45 hover:text-white transition-colors">Key
+                                Dates</a></li>
+                        <li><a href="#committee"
+                                class="text-sm text-white/45 hover:text-white transition-colors">Committee</a></li>
+                        <li><a href="#submission"
+                                class="text-sm text-white/45 hover:text-white transition-colors">Submission</a></li>
+                        <li><a href="#registration"
+                                class="text-sm text-white/45 hover:text-white transition-colors">Registration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-[10px] font-bold tracking-[.2em] uppercase text-white/25 mb-5">Contact</div>
+                    <div class="space-y-2.5 text-sm text-white/45">
+                        <div><a href="mailto:info@aspect-2026.uz"
+                                class="hover:text-white transition-colors">info@aspect-2026.uz</a></div>
+                        <div>+998 71 123 45 67</div>
+                        <div>Tashkent, Uzbekistan</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-between items-center gap-4 pt-8 border-t border-white/7">
+                <div class="text-xs text-white/20">© 2026 ASPECT International Conference. All rights reserved.</div>
+                <div class="flex gap-2">
+                    <span
+                        class="text-[10px] font-bold tracking-widest text-white/25 border border-white/10 px-3 py-1">Scopus</span>
+                    <span
+                        class="text-[10px] font-bold tracking-widest text-white/25 border border-white/10 px-3 py-1">Web
+                        of Science</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            const s = window.scrollY > 60;
+            nav.classList.toggle('scrolled', s);
+            nav.querySelectorAll('.nav-logo').forEach(e => e.style.color = s ? '#0d1b2a' : '');
+            nav.querySelectorAll('.nav-span').forEach(e => e.style.color = s ? '#1a56db' : '');
+            nav.querySelectorAll('.nav-link').forEach(e => e.style.color = s ? '#6b7a8d' : '');
+            nav.querySelectorAll('.nav-cta').forEach(e => { e.style.background = s ? '#1a56db' : ''; e.style.color = s ? 'white' : ''; });
+        });
+        const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('on')), { threshold: .08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>
