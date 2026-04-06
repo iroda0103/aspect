@@ -200,11 +200,7 @@
                 <div class="mt-8 pt-8 border-t border-gray-100">
                     <div class="text-[10px] font-bold tracking-[.18em] uppercase text-muted mb-3">Supporting
                         Institutions</div>
-                    <p class="text-sm text-muted leading-loose">Academy of Sciences of Uzbekistan · Fergana State
-                        University · Namangan State University · Samarkand State University · Karshi State University ·
-                        Belarusian National Technical University · Belarusian State University · EGE University
-                        (Turkiye) · University of Malaya · International Islamic University of Malaya · Novosibirsk
-                        State University · Osh University of Technology</p>
+                    <p class="text-sm text-muted leading-loose">Academy of Sciences of Uzbekistan · Almalyk State Technical Institute · Samarkand State University · Navoi State University of Mining and Technology · Jizzakh Polytechnic Institute · Sharq University · Yessenov University (Kazakhstan) · Satbayev University (Kazakhstan) · Karabuk University (Turkey) · Osh University of Technology (Kyrgyzstan) · University of Muhammadiyah Yogyakarta (Indonesia)</p>
                 </div>
             </div>
         </div>
@@ -481,6 +477,71 @@
             </div>
         </div>
     </section>
+
+    <!-- PARTNERS SLIDER -->
+    <section id="partners" class="py-20 bg-cream border-y border-gray-200 overflow-hidden">
+        <div class="max-w-[1920px] mx-auto px-8 mb-10">
+            <span class="text-[11px] font-bold tracking-[.2em] uppercase text-cobalt mb-3 block">Collaboration</span>
+            <h2 class="font-serif text-4xl font-bold text-navy">Partner Institutions</h2>
+        </div>
+        <div class="relative overflow-hidden">
+            <div id="slider-track" style="display:flex;gap:48px;width:max-content;animation:slide 30s linear infinite;align-items:center">
+                <!-- Set 1 -->
+                <div style="display:flex;gap:48px;align-items:center;flex-shrink:0">
+                    <div class="partner-logo"><img src="academy.png" alt="Academy of Sciences of Uzbekistan" /></div>
+                    <div class="partner-logo"><img src="olmaliq.svg" alt="Almalyk State Technical Institute" /></div>
+                    <div class="partner-logo"><img src="samdu.png" alt="Samarkand State University" /></div>
+                    <div class="partner-logo"><img src="jizpi.png" alt="Jizzakh Polytechnic Institute" /></div>
+                    <div class="partner-logo"><img src="logo_sharq_blue.png" alt="Sharq University" /></div>
+                    <div class="partner-logo"><img src="yuedu.png" alt="Yessenov University" /></div>
+                    <div class="partner-logo"><img src="satbayev.png" alt="Satbayev University" /></div>
+                    <div class="partner-logo"><img src="karabuk.png" alt="Karabuk University" /></div>
+                    <div class="partner-logo"><img src="UMY.png" alt="University of Muhammadiyah Yogyakarta" /></div>
+                </div>
+                <!-- Set 2 (duplicate for seamless loop) -->
+                <div style="display:flex;gap:48px;align-items:center;flex-shrink:0">
+                    <div class="partner-logo"><img src="academy.png" alt="Academy of Sciences of Uzbekistan" /></div>
+                    <div class="partner-logo"><img src="olmaliq.svg" alt="Almalyk State Technical Institute" /></div>
+                    <div class="partner-logo"><img src="samdu.png" alt="Samarkand State University" /></div>
+                    <div class="partner-logo"><img src="jizpi.png" alt="Jizzakh Polytechnic Institute" /></div>
+                    <div class="partner-logo"><img src="logo_sharq_blue.png" alt="Sharq University" /></div>
+                    <div class="partner-logo"><img src="yuedu.png" alt="Yessenov University" /></div>
+                    <div class="partner-logo"><img src="satbayev.png" alt="Satbayev University" /></div>
+                    <div class="partner-logo"><img src="karabuk.png" alt="Karabuk University" /></div>
+                    <div class="partner-logo"><img src="UMY.png" alt="University of Muhammadiyah Yogyakarta" /></div>
+                </div>
+            </div>
+            <!-- fade edges -->
+            <div style="position:absolute;top:0;left:0;width:120px;height:100%;background:linear-gradient(to right,#f8f5ef,transparent);pointer-events:none"></div>
+            <div style="position:absolute;top:0;right:0;width:120px;height:100%;background:linear-gradient(to left,#f8f5ef,transparent);pointer-events:none"></div>
+        </div>
+    </section>
+    <style>
+        .partner-logo {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 8px 16px;
+            filter: grayscale(1) opacity(0.55);
+            transition: filter 0.3s;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0) opacity(1);
+        }
+        .partner-logo img {
+            height: 56px;
+            width: auto;
+            max-width: 160px;
+            object-fit: contain;
+        }
+        @keyframes slide {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        #slider-track:hover { animation-play-state: paused; }
+    </style>
 
     <!-- SUBMISSION -->
     <section id="submission" class="py-32 bg-cream">
